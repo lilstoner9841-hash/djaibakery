@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="DJAI — Delightful, Joyful, Authentic, Impressive">
+  <defs>
+    <!-- perforated stamp edge: round dots punched along the border -->
+    <mask id="perf">
+      <rect width="200" height="200" fill="#fff"/>
+      <rect x="10" y="10" width="180" height="180" fill="none" stroke="#000" stroke-width="11" stroke-linecap="round" stroke-dasharray="0 15" stroke-dashoffset="-7.5"/>
+    </mask>
+  </defs>
+  <rect x="10" y="10" width="180" height="180" fill="#3a2216" mask="url(#perf)"/>
+  <g fill="#e6bd82" font-family="'Courier New', Courier, monospace">
+    <text x="100" y="58" text-anchor="middle" font-size="30" font-weight="700" letter-spacing="2">DJAI</text>
+    <rect x="46" y="70" width="108" height="1.6"/>
+    <g font-size="14.5" font-weight="700">
+      <text x="40" y="100">D · Delightful</text>
+      <text x="40" y="122">J · Joyful</text>
+      <text x="40" y="144">A · Authentic</text>
+      <text x="40" y="166">I · Impressive</text>
+    </g>
+  </g>
+</svg>

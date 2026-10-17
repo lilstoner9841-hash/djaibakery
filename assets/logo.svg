@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="DJAI">
+  <defs>
+    <mask id="perf">
+      <rect width="200" height="200" fill="#fff"/>
+      <rect x="10" y="10" width="180" height="180" fill="none" stroke="#000" stroke-width="13" stroke-linecap="round" stroke-dasharray="0 22.5" stroke-dashoffset="-11.25"/>
+    </mask>
+  </defs>
+  <rect x="10" y="10" width="180" height="180" fill="#3a2216" mask="url(#perf)"/>
+  <g fill="#e6bd82" font-family="'Courier New', Courier, monospace">
+    <text x="100" y="114" text-anchor="middle" font-size="54" font-weight="700" letter-spacing="1">DJAI</text>
+    <rect x="44" y="132" width="112" height="4"/>
+  </g>
+</svg>
