@@ -263,7 +263,7 @@
 
   const productById = (id) => state.products.find((p) => p.id === id);
   const themeOf = (p) => (/brown/i.test(p.id + p.name) ? 'theme-brownie' : /cook/i.test(p.id + p.name) ? 'theme-cookie' : 'theme-other');
-  const imageOf = (p) => p.image || (/cook/i.test(p.id + p.name) ? 'assets/cookie.svg' : 'assets/brownie.svg');
+  const imageOf = (p) => p.image || (/cook/i.test(p.id + p.name) ? 'assets/cookie.jpg?v=5' : 'assets/brownie.jpg?v=5');
   const descOf = (p) => p.description || I18N[lang]['desc_' + p.id] || I18N[lang]['desc_' + (/cook/i.test(p.id) ? 'cookie' : 'brownie')] || '';
 
   function cartTotals() {
