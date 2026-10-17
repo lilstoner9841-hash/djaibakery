@@ -14,6 +14,8 @@
   const digits = (s) => String(s || '').replace(/\D/g, '');
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const nf = new Intl.NumberFormat('en-US');
+  // lets anim.js react to what the shop is doing (render, reserved, done, paid)
+  const emit = (name, detail) => document.dispatchEvent(new CustomEvent('djai:' + name, { detail }));
 
   // localStorage can be blocked (private mode etc.) — never let it break the page
   const store = {
@@ -490,6 +492,7 @@
             <b>${p.stock > 0 ? t('left', { n: p.stock }) : t('soldOut')}</b>
           </a>`).join('')}
       </div>`;
+    emit('render');
   }
 
   function productCard(p) {
@@ -536,6 +539,7 @@
     }
     grid.classList.toggle('three', state.products.length >= 3);
     grid.innerHTML = state.products.map(productCard).join('');
+    emit('render');
   }
 
   function renderCartUI() {
@@ -901,6 +905,7 @@
       state.useOriginalQr = false;
       state.slip = null;
       state.sheet = 'pay';
+      emit('reserved', { orderId: res.orderId });
       loadStock({ silent: true });
     } catch (e) {
       toast(t('netErr'));
@@ -1022,6 +1027,7 @@
       saveOrder();
       state.slip = null;
       state.sheet = 'done';
+      emit('done');
     } catch {
       toast(t('netErr'));
     } finally {
@@ -1116,6 +1122,7 @@
         if (o.status === 'cancel') markCancelled(false);
         else if (state.sheet === 'pay' && o.status !== 'pending') state.sheet = 'done';
         renderAll();
+        if (o.status === 'paid') emit('paid');
       }
     } catch { /* offline — try again later */ }
   }
