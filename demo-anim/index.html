@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="lo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Brownie &amp; Cookie</title>
+  <meta name="description" content="Brownie & Cookie — ເບິ່ງສະຕັອກສົດ ຈອງອອນລາຍ ຈ່າຍຜ່ານ LAO QR / BCEL One">
+  <meta name="theme-color" content="#4a2618">
+  <meta property="og:title" content="Brownie & Cookie">
+  <meta property="og:description" content="ບຣາວນີ້ ແລະ ຄຸກກີ້ ອົບສົດໃໝ່ທຸກມື້ — ຈອງອອນລາຍ ຈ່າຍຜ່ານ LAO QR">
+  <link rel="icon" href="assets/logo.svg?v=4" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/logo.svg?v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Sans+Lao+Looped:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <!-- เปลี่ยนเลข ?v= ทุกครั้งที่อัปโหลดเวอร์ชันใหม่ มือถือจะได้ไม่ใช้ไฟล์เก่าที่จำไว้ -->
+  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="anim.css?v=1">
+</head>
+<body>
+  <!-- C · intro: DJAI stamp slams onto the screen (anim.js lifts it away) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-ring"></div>
+    <img class="intro-stamp" src="assets/logo-full.svg" alt="">
+    <div class="intro-words">BAKED FRESH DAILY</div>
+    <div class="intro-skip"></div>
+  </div>
+  <div class="demo-bar" id="demoBar" hidden></div>
+
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="#top" aria-label="Home">
+        <img src="assets/logo.svg?v=4" alt="DJAI" width="44" height="44">
+        <span class="brand-name" id="shopName">Brownie &amp; Cookie</span>
+      </a>
+      <div class="top-actions">
+        <button class="order-pill" id="orderPill" data-act="openOrder" hidden></button>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="lo">ລາວ</button>
+          <button type="button" data-lang="th">ไทย</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <button class="cart-btn" type="button" data-act="openCart" id="cartBtn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 7h12l-1.2 11.1a2 2 0 0 1-2 1.9H9.2a2 2 0 0 1-2-1.9L6 7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span class="cart-count" id="cartCount" hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-text">
+        <span class="eyebrow"><span class="pulse"></span><span data-i18n="tagline"></span></span>
+        <h1 data-i18n-html="heroTitle"></h1>
+        <p class="lead" data-i18n="heroSub"></p>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-primary" data-i18n="ctaMenu"></a>
+          <a href="#how" class="btn btn-ghost" data-i18n="ctaHow"></a>
+        </div>
+        <div class="stock-strip" id="stockStrip" aria-live="polite"></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="ring"></div>
+        <img class="art art-cookie" src="assets/cookie.svg" alt="">
+        <img class="art art-brownie" src="assets/brownie.svg" alt="">
+        <div class="tag tag-1" id="tag1"></div>
+        <div class="tag tag-2" id="tag2"></div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu wrap">
+      <div class="section-head">
+        <h2 data-i18n="menuTitle"></h2>
+        <p data-i18n="menuSub"></p>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <section id="how" class="how wrap">
+      <h2 data-i18n="howTitle"></h2>
+      <ol class="steps3">
+        <li><span class="num">1</span><div><h3 data-i18n="hw1t"></h3><p data-i18n="hw1"></p></div></li>
+        <li><span class="num">2</span><div><h3 data-i18n="hw2t"></h3><p data-i18n="hw2"></p></div></li>
+        <li><span class="num">3</span><div><h3 data-i18n="hw3t"></h3><p data-i18n="hw3"></p></div></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <div>
+        <div class="footer-brand"><img src="assets/logo-full.svg?v=4" alt="DJAI — Delightful, Joyful, Authentic, Impressive" width="108" height="108"><span id="footerName">Brownie &amp; Cookie</span></div>
+        <p class="footer-tag" data-i18n="footerTag"></p>
+      </div>
+      <div class="footer-links" id="footerLinks"></div>
+    </div>
+  </footer>
+
+  <div class="cartbar" id="cartBar" hidden></div>
+
+  <div class="sheet-root" id="sheetRoot" hidden>
+    <div class="sheet-backdrop" data-act="closeSheet"></div>
+    <aside class="sheet" role="dialog" aria-modal="true" aria-label="Cart">
+      <div class="sheet-grab" aria-hidden="true"></div>
+      <div class="sheet-head" id="sheetHead"></div>
+      <div class="sheet-body" id="sheetBody"></div>
+      <div class="sheet-foot" id="sheetFoot"></div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="slipInput" accept="image/*" hidden>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <script src="config.js?v=4"></script>
+  <script src="anim.js?v=1"></script>
+  <script src="app.js?v=4"></script>
+</body>
+</html>

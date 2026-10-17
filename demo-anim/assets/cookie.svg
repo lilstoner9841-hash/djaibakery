@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="87 95 680 680" role="img" aria-label="Chocolate chip cookies">
+  <defs>
+    <radialGradient id="ctop" cx="0.42" cy="0.38" r="0.7">
+      <stop offset="0" stop-color="#f6cf8f"/>
+      <stop offset="0.45" stop-color="#e5a85f"/>
+      <stop offset="0.82" stop-color="#c9843d"/>
+      <stop offset="1" stop-color="#a7652a"/>
+    </radialGradient>
+    <linearGradient id="cside" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b3702f"/>
+      <stop offset="1" stop-color="#7a4318"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6b3a17" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#6b3a17" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- organic, hand-shaped edge -->
+    <filter id="cwob" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="12" result="w"/>
+      <feDisplacementMap in="SourceGraphic" in2="w" scale="28" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="cwob2" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.024" numOctaves="3" seed="31" result="w"/>
+      <feDisplacementMap in="SourceGraphic" in2="w" scale="24" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- golden baked surface -->
+    <filter id="baked" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="4" seed="21" result="n"/>
+      <feDiffuseLighting in="n" surfaceScale="3.4" diffuseConstant="1.05" lighting-color="#ffffff" result="d">
+        <feDistantLight azimuth="225" elevation="50"/>
+      </feDiffuseLighting>
+      <feComposite in="d" in2="SourceAlpha" operator="in" result="di"/>
+      <feComposite in="SourceGraphic" in2="di" operator="arithmetic" k1="0.85" k2="0.3" k3="0" k4="-0.06"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>
+
+    <g id="chip">
+      <path d="M-14,2 C-15,-8 -6,-15 3,-14 C12,-13 16,-5 14,4 C12,12 2,15 -6,13 C-12,11 -14,7 -14,2 Z" fill="#2a1208"/>
+      <path d="M-8,-8 C-3,-12 5,-11 9,-7" stroke="#8f5636" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"/>
+      <ellipse cx="-2" cy="-6" rx="4" ry="2" fill="#fff" opacity="0.35"/>
+    </g>
+    <g id="melt">
+      <path d="M-24,0 C-24,-12 -12,-19 2,-18 C17,-17 26,-8 24,4 C22,15 9,19 -4,18 C-16,17 -24,11 -24,0 Z" fill="#241006"/>
+      <path d="M-14,-10 C-6,-15 6,-15 13,-10" stroke="#9a5e3c" stroke-width="3.2" fill="none" stroke-linecap="round" opacity="0.8"/>
+      <ellipse cx="-4" cy="-8" rx="7" ry="2.6" fill="#fff" opacity="0.4"/>
+    </g>
+    <path id="crumbL" d="M-6,-2 L0,-6 L7,-1 L4,5 L-5,4 Z" fill="#cf8f4a"/>
+    <path id="crumbD" d="M-4,-2 L0,-4 L5,-1 L3,3 L-3,3 Z" fill="#2a1208"/>
+    <path id="sparkle" d="M0,-14 C2,-3 3,-2 14,0 C3,2 2,3 0,14 C-2,3 -3,2 -14,0 C-3,-2 -2,-3 0,-14 Z" fill="#f2b84b"/>
+  </defs>
+
+  <!-- shadows -->
+  <ellipse cx="560" cy="345" rx="200" ry="150" fill="url(#shadow)" filter="url(#soft)" transform="translate(16,26)"/>
+  <ellipse cx="370" cy="520" rx="250" ry="190" fill="url(#shadow)" filter="url(#soft)" transform="translate(18,34)"/>
+
+  <!-- back cookie -->
+  <g filter="url(#cwob2)">
+    <ellipse cx="545" cy="320" rx="185" ry="160" fill="url(#cside)"/>
+    <ellipse cx="545" cy="300" rx="185" ry="160" fill="url(#ctop)" filter="url(#baked)"/>
+  </g>
+  <path d="M560,258 l20,10 l15,-6 M500,330 l-12,14 l4,16 M612,316 l16,4" stroke="#f9dca8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+  <path d="M561,261 l20,10 l15,-6 M501,333 l-12,14 l4,16" stroke="#9b5a22" stroke-width="1.6" fill="none" opacity="0.5"/>
+  <use href="#chip" transform="translate(525,190) rotate(20) scale(1.1,0.95)"/>
+  <use href="#chip" transform="translate(605,220) rotate(-35) scale(1.2,1)"/>
+  <use href="#melt" transform="translate(655,310) rotate(10) scale(0.95,0.85)"/>
+  <use href="#chip" transform="translate(675,240) rotate(60) scale(0.9)"/>
+  <use href="#chip" transform="translate(585,282) rotate(-10) scale(1)"/>
+  <use href="#chip" transform="translate(445,262) rotate(45) scale(0.95,0.85)"/>
+  <use href="#chip" transform="translate(485,222) rotate(-60) scale(0.8)"/>
+  <use href="#chip" transform="translate(695,340) rotate(25) scale(0.85)"/>
+
+  <!-- front cookie -->
+  <g filter="url(#cwob)">
+    <ellipse cx="360" cy="494" rx="235" ry="205" fill="url(#cside)"/>
+    <ellipse cx="360" cy="470" rx="235" ry="205" fill="url(#ctop)" filter="url(#baked)"/>
+  </g>
+  <path d="M300,420 l25,12 l14,-9 l22,6 M410,520 l-18,16 l6,20 M250,500 l20,-8 l12,10 M420,410 l14,-16 l20,2 M210,430 l18,6 M470,470 l18,10 l4,18" stroke="#f9dca8" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <path d="M301,423 l25,12 l14,-9 l22,6 M411,523 l-18,16 l6,20 M251,503 l20,-8 l12,10 M421,413 l14,-16 l20,2" stroke="#9b5a22" stroke-width="1.6" fill="none" opacity="0.5"/>
+
+  <use href="#chip" transform="translate(255,395) rotate(15) scale(1,0.9)"/>
+  <use href="#chip" transform="translate(300,350) rotate(-30) scale(0.8)"/>
+  <use href="#chip" transform="translate(372,330) rotate(40) scale(1.15,1)"/>
+  <use href="#chip" transform="translate(455,360) rotate(-15) scale(0.9)"/>
+  <use href="#chip" transform="translate(520,420) rotate(65) scale(1.1,0.95)"/>
+  <use href="#chip" transform="translate(210,470) rotate(-50) scale(0.9)"/>
+  <use href="#melt" transform="translate(275,450) rotate(22) scale(0.9,0.8)"/>
+  <use href="#chip" transform="translate(330,420) rotate(80) scale(0.75)"/>
+  <use href="#melt" transform="translate(410,430) rotate(-14) scale(1,0.85)"/>
+  <use href="#chip" transform="translate(480,480) rotate(10) scale(0.85)"/>
+  <use href="#chip" transform="translate(545,500) rotate(-70) scale(0.7)"/>
+  <use href="#chip" transform="translate(240,545) rotate(35) scale(1.1,0.95)"/>
+  <use href="#chip" transform="translate(310,520) rotate(-20) scale(0.9)"/>
+  <use href="#chip" transform="translate(380,540) rotate(55) scale(1.2,1)"/>
+  <use href="#melt" transform="translate(450,560) rotate(8) scale(0.85,0.75)"/>
+  <use href="#chip" transform="translate(330,610) rotate(-40) scale(0.95)"/>
+  <use href="#chip" transform="translate(420,625) rotate(25) scale(0.8)"/>
+  <use href="#chip" transform="translate(175,500) rotate(90) scale(0.7)"/>
+  <use href="#chip" transform="translate(500,600) rotate(-5) scale(0.75)"/>
+  <use href="#chip" transform="translate(392,482) rotate(45) scale(0.6)"/>
+
+  <!-- crumbs -->
+  <use href="#crumbL" transform="translate(150,640) rotate(20)"/>
+  <use href="#crumbL" transform="translate(190,690) rotate(-40) scale(0.8)"/>
+  <use href="#crumbD" transform="translate(172,668) rotate(15)"/>
+  <use href="#crumbL" transform="translate(560,700) rotate(60) scale(1.1)"/>
+  <use href="#crumbL" transform="translate(610,650) rotate(-15) scale(0.7)"/>
+  <use href="#crumbD" transform="translate(640,690) rotate(30) scale(1.1)"/>
+  <use href="#crumbL" transform="translate(700,560) rotate(45) scale(0.8)"/>
+  <use href="#crumbD" transform="translate(120,560) rotate(-30) scale(0.8)"/>
+  <use href="#crumbL" transform="translate(590,728) rotate(10) scale(0.6)"/>
+
+  <!-- sparkles -->
+  <use href="#sparkle" transform="translate(205,215) scale(1.3)"/>
+  <use href="#sparkle" transform="translate(160,275) scale(0.7)" opacity="0.8"/>
+  <use href="#sparkle" transform="translate(720,470) scale(0.9)" opacity="0.9"/>
+</svg>
