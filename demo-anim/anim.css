@@ -88,12 +88,12 @@
 .card.tilting { transition: transform .08s linear; box-shadow: 0 30px 60px rgba(40, 18, 6, .22); }
 @media (hover: hover) { .card:hover { transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-6px); } }
 .card .card-media img {
-  transform: translate(calc(var(--px) * -18px), calc(var(--py) * -18px)) scale(1.04);
+  transform: translate(calc(var(--px) * -18px), calc(var(--py) * -18px)) scale(1.1);
   transition: transform .6s var(--ease-out-x);
   animation: bob 4.5s ease-in-out infinite;
 }
 .card.tilting .card-media img { transition: transform .08s linear; }
-@media (hover: hover) { .card:hover .card-media img { transform: translate(calc(var(--px) * -18px), calc(var(--py) * -18px)) scale(1.1) rotate(-2deg); } }
+@media (hover: hover) { .card:hover .card-media img { transform: translate(calc(var(--px) * -18px), calc(var(--py) * -18px)) scale(1.15); } }
 .card .card-media { touch-action: pan-y; }
 @keyframes bob { 50% { translate: 0 -7px; } }
 .card.pre { opacity: 0; }
@@ -104,7 +104,7 @@
 .sr.in { opacity: 1; transform: none; }
 
 /* ---------- B · fly to cart ---------- */
-.fly-ghost { position: fixed; z-index: 120; pointer-events: none; object-fit: contain; filter: drop-shadow(0 10px 14px rgba(58, 34, 22, .35)); }
+.fly-ghost { position: fixed; z-index: 120; pointer-events: none; object-fit: cover; border-radius: 50%; border: 3px solid #fff; filter: drop-shadow(0 10px 14px rgba(58, 34, 22, .35)); }
 .plus-one {
   position: fixed; z-index: 121; pointer-events: none; transform: translateX(-50%);
   font: 800 18px/1 "Plus Jakarta Sans", sans-serif; color: #c97b3d; animation: plusUp .9s ease-out forwards;
